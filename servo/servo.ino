@@ -26,7 +26,7 @@ void setup() {
   // Set up the pushbutton pins to be an input:
   pinMode(buttonPin, INPUT);
 
-  servo.write(30); // move MG996R's shaft to angle 45°
+  servo.write(45); // move MG996R's shaft to angle 45°
 }
 
 void loop() {
