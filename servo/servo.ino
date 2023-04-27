@@ -14,15 +14,35 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 // servo pin
 const int servoPin = 3;
 
+// pushbutton pin
+const int buttonPin = 8;
+
 Servo servo; // servo object representing the MG 996R servo
 
 void setup() {
-  servo.attach(3); // servo is wired to Arduino on digital pin 3
+  // servo is wired to Arduino on digital pin 3
+  servo.attach(servoPin); 
+
+  // Set up the pushbutton pins to be an input:
+  pinMode(buttonPin, INPUT);
+
+  servo.write(30); // move MG996R's shaft to angle 45°
 }
 
 void loop() {
-  servo.write(2); // move MG996R's shaft to angle 0°
-  delay(1000); // wait for one second
-  servo.write(30); // move MG996R's shaft to angle 45°
-  delay(1000); // wait for one second 
+  // local variable to hold the pushbutton states
+  int buttonState;  
+
+  // read the digital state of buttonPin with digitalRead() function and store the value in buttonState variable
+  buttonState = digitalRead(buttonPin);
+
+  //if the button is pressed then released, make the servo turn once
+  if (buttonState == HIGH)
+  {
+    servo.write(5); // move MG996R's shaft to angle 0°
+    delay(500); // wait for one second
+    servo.write(30); // move MG996R's shaft to angle 45°
+    delay(1000); // wait for one second 
+  }
+
 }
