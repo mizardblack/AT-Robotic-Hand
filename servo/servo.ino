@@ -15,7 +15,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 const int servoPin = 3;
 
 // pushbutton pin
-const int buttonPin = 8;
+const int buttonPin = 7;
 
 Servo servo; // servo object representing the MG 996R servo
 
