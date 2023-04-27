@@ -39,9 +39,9 @@ void loop() {
   //if the button is pressed then released, make the servo turn once
   if (buttonState == HIGH)
   {
-    servo.write(5); // move MG996R's shaft to angle 0°
-    delay(500); // wait for one second
-    servo.write(30); // move MG996R's shaft to angle 45°
+    servo.write(5); // move MG996R's shaft to angle 5°
+    delay(200); // wait for one second
+    servo.write(15); // move MG996R's shaft to angle 30°
     delay(1000); // wait for one second 
   }
 
